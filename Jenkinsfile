@@ -20,7 +20,7 @@ pipeline {
                 echo 'Deployment Done on Kubernetes Cluster'
                 sh 'sleep 3'
             }
-        }'
+        }
         stage('Send Email Altert') {
             steps {
                 echo 'Email Alert done....'
