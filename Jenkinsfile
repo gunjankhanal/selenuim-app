@@ -23,7 +23,7 @@ pipeline {
         }'
         stage('Send Email Altert') {
             steps {
-                echo 'Email Alert done..'
+                echo 'Email Alert done....'
                 sh 'sleep 3'
             }
         }
