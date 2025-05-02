@@ -1,24 +1,24 @@
 pipeline {
-    agent any
+    agent {label node_a}
 
     stages {
-        stage('Building') {
+        stage('Git Version') {
             steps {
-                echo 'Building Maven Project....'
-                sh 'sleep 6'
+                echo 'Git Version....'
+                sh 'git version'
             }
         }
         
-        stage('Testing') {
+        stage('Java Version') {
             steps {
-                echo 'Integration Testing Done....'
-                sh 'sleep 6'
+                echo 'Java Version....'
+                sh 'java --version'
             }
         }
-        stage('Deployment to K8S') {
+        stage('See Running COntainers') {
             steps {
-                echo 'Deployment Done on Kubernetes Cluster'
-                sh 'sleep 3'
+                echo 'See Running COntainers'
+                sh 'docker ps'
             }
         }
         stage('Send Email Altert') {
